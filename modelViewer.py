@@ -12,9 +12,7 @@ class Viewer():
         self.initWindow()
         self.initGL()
         self.initView()
-        
         self.obj = OBJ(obj, True)
- 
         self.inputs = Input()
 
     def initWindow(self):
@@ -53,7 +51,6 @@ class Viewer():
         gluPerspective(70, aspect_ratio, 0.1, 4000.0)
         
         glTranslated(0, 0, -15)
-        
 
     def render(self):
         glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT)
@@ -124,8 +121,6 @@ class Input():
                 self.trackball.drag_to(self.mouseLocation[0], self.mouseLocation[1], dx, dy)
             elif self.pressed == GLUT_MIDDLE_BUTTON:
                 self.translate(dx/60.0, dy/60.0, 0)
-            else:
-                pass
             
             glutPostRedisplay()
         self.mouseLocation = (x, y)

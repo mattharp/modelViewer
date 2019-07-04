@@ -1,5 +1,5 @@
 import sys
-import Image
+from PIL import Image
 import numpy
 from OpenGL.GL import *
 
